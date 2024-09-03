@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi Modal Complaint Organizer</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #1c1c1c, #333);
+            color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+        .download {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .download:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .logout-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .logout-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .content {
+            display: flex;
+            justify-content: flex-start; 
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            padding-top: 30px; 
+            padding-bottom: 50px; 
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 50px; 
+            font-size: 3rem;
+            font-weight: 700;
+            color: #00c6ff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 50px; 
+            font-size: 1.5rem;
+            color: #ffffff;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        form {
+            flex-grow: 1;
+            flex-basis: 22%; 
+        }
+
+        label.custom-button {
+            padding: 15px;
+            background: linear-gradient(45deg, #00c6ff, #007bff);
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            text-align: center;
+            display: inline-block;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            width: 100%; 
+        }
+
+        label.custom-button:hover {
+            background: linear-gradient(45deg, #007bff, #00c6ff);
+            transform: translateY(-5px);
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            .button-container {
+                flex-direction: column;
+            }
+
+            form {
+                flex-basis: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form action="/download" method = "POST">
+        <button type="submit" class = "download">Download Report</button>
+    </form>
+    <form action="/logout" method="POST">
+        <button type="submit" class="logout-button">Logout</button>
+    </form>
+    <div class="content">
+        <h1>Complaint Coordinator</h1>
+        <h2>A one stop shop for analyzing your product complaints!</h2>
+        <h2>Import a complaint below!</h2>
+        <div class="button-container">
+            <form action="/Video" method="post" enctype="multipart/form-data">
+                <label for="video-upload" class="custom-button">Video (mp4)</label>
+                <input type="file" id="video-upload" name="video_file" accept=".mp4" onchange="this.form.submit()">
+            </form>
+        
+            <form action="/Text" method="post" enctype="multipart/form-data">
+                <label for="text-upload" class="custom-button">Text File (.txt)</label>
+                <input type="file" id="text-upload" name="text_file" accept=".txt" onchange="this.form.submit()">
+            </form>
+        
+            <form action="/Voice" method="post" enctype="multipart/form-data">
+                <label for="voice-upload" class="custom-button">Voice (wav)</label>
+                <input type="file" id="voice-upload" name="voice_file" accept=".wav" onchange="this.form.submit()">
+            </form>
+        
+            <form action="/Image" method="post" enctype="multipart/form-data">
+                <label for="image-upload" class="custom-button">Image (png, jpg)</label>
+                <input type="file" id="image-upload" name="image_file" accept=".png, .jpg, .jpeg" onchange="this.form.submit()">
+            </form>
+        </div>
+        <h2>Scroll down for the graph!</h2>
+    </div>
+    {{graph|safe}}
+</body>
+</html>

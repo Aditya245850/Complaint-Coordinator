@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        .login-box {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .login-box h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        .login-box input[type="text"],
+        .login-box input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;  
+        }
+        .login-box input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .login-box input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .buttons {
+            margin-top: 20px;  
+        }
+        .buttons input[type="submit"] {
+            margin-top: 10px; 
+        }
+        .login-error {
+            color: #FF0000; 
+            background-color: #f8d7da; 
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #f5c2c7;
+            margin-top: 15px;
+            font-size: 14px;
+            text-align: center;
+            width: 300px; 
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <h2>Login</h2>
+        <form action="/login" method="POST">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <div class="buttons">
+                <input type="submit" value="Login">
+            </div>
+        </form>
+        <form action="/" method="GET">
+            <div class="buttons">
+                <input type="submit" value="Go back home"> 
+            </div>
+        </form>
+    </div>
+        {% if error %}
+            <p class="login-error">{{ error }}</p>
+        {% endif %}
+</body>
+</html>
