@@ -15,30 +15,34 @@ How to run:
   cd complaint-coordinator
 
 2) Create a python virtual environment
+   
    python3 -m venv venv
    source venv/bin/activate
 
-3) Install the necessary dependencies
+4) Install the necessary dependencies
+   
    pip install -t requirements.txt
 
-4) Set up the Database Configuration in DB_CONNECTION.py
-   DB_HOST = ''
+6) Set up the Database Configuration in DB_CONNECTION.py
+   
+  DB_HOST = ''
   DB_NAME = ''
   DB_USER = ''
   DB_PASS = ''
   DB_PORT = ''
 
-5) Set the API KEYS in application.py
-   API_KEY = 'your_api_key'
+8) Set the API KEYS in application.py
+   
+  API_KEY = 'your_api_key'
 
-6) Retrieve a JSON key file from your Google Cloud console for the necessary APIs (Speech-to-Text, Vision
+10) Retrieve a JSON key file from your Google Cloud console for the necessary APIs (Speech-to-Text, Vision
    and Video Intelligence)
    
    os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/path-to-your-json-file.json"
 
-7) Run the Flask application in application.py
+11) Run the Flask application in application.py
 
    flask run
 
-8) Visit http://127.0.0.1:5000 to view the application
+11) Visit http://127.0.0.1:5000 to view the application
    
