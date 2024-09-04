@@ -12,11 +12,13 @@ How to run:
 1) Begin by cloning the repository using the command and entering into the directory
 
   git clone https://github.com/Aditya245850/complaint-coordinator.git
+  
   cd complaint-coordinator
 
 2) Create a python virtual environment
    
    python3 -m venv venv
+   
    source venv/bin/activate
 
 4) Install the necessary dependencies
@@ -26,9 +28,13 @@ How to run:
 6) Set up the Database Configuration in DB_CONNECTION.py
    
   DB_HOST = ''
+  
   DB_NAME = ''
+  
   DB_USER = ''
+  
   DB_PASS = ''
+  
   DB_PORT = ''
 
 8) Set the API KEYS in application.py
