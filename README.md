@@ -27,15 +27,15 @@ How to run:
 
 6) Set up the Database Configuration in DB_CONNECTION.py
    
-  DB_HOST = ''
-  
-  DB_NAME = ''
-  
-  DB_USER = ''
-  
-  DB_PASS = ''
-  
-  DB_PORT = ''
+    DB_HOST = ''
+    
+    DB_NAME = ''
+    
+    DB_USER = ''
+    
+    DB_PASS = ''
+    
+    DB_PORT = ''
 
 8) Set the API KEYS in application.py
    
