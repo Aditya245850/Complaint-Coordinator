@@ -39,16 +39,16 @@ How to run:
 
 8) Set the API KEYS in application.py
    
-  API_KEY = 'your_api_key'
+    API_KEY = 'your_api_key'
 
 10) Retrieve a JSON key file from your Google Cloud console for the necessary APIs (Speech-to-Text, Vision
    and Video Intelligence)
    
-   os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/path-to-your-json-file.json"
+     os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/path-to-your-json-file.json"
 
 11) Run the Flask application in application.py
 
-   flask run
+     flask run
 
 11) Visit http://127.0.0.1:5000 to view the application
    
