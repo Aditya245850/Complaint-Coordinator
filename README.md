@@ -11,9 +11,9 @@ How to run:
 
 1) Begin by cloning the repository using the command and entering into the directory
 
-  git clone https://github.com/Aditya245850/complaint-coordinator.git
+    git clone https://github.com/Aditya245850/complaint-coordinator.git
   
-  cd complaint-coordinator
+    cd complaint-coordinator
 
 2) Create a python virtual environment
    
